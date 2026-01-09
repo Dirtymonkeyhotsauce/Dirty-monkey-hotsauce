@@ -1,164 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dirty Monkey Hotsauce</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Dirty Monkey Hotsauce</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top, #2a0000, #050505 70%);
-      color: #f2f2f2;
-    }
+<!-- Aggressive condensed font -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
 
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.3), #050505),
-        radial-gradient(circle at top, #ff2a00, #300000 60%);
-      border-bottom: 2px solid #1a1a1a;
-    }
+<style>
+:root{
+  --red:#ff2a00;
+  --orange:#ff6a00;
+  --yellow:#ffb000;
+  --dark:#050505;
+}
 
-    h1 {
-      font-size: 52px;
-      margin: 0;
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, #ff0000, #ff6a00, #ffcc00);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-transform: uppercase;
-    }
+*{
+  box-sizing:border-box;
+}
 
-    h2 {
-      color: #ff6a00;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+body{
+  margin:0;
+  font-family:'Oswald', Arial, sans-serif;
+  color:#f2f2f2;
+  background:
+    linear-gradient(rgba(0,0,0,0.82), rgba(20,0,0,0.88)),
+    radial-gradient(circle at top, #ff3c00, #120000 65%);
+  background-attachment:fixed;
+}
 
-    h3 {
-      margin-top: 0;
-      color: #ffb000;
-    }
+/* ===== HEADER ===== */
+header{
+  text-align:center;
+  padding:80px 20px 60px;
+}
 
-    p {
-      color: #cfcfcf;
-      line-height: 1.6;
-    }
+header img{
+  max-width:520px; /* BIG LOGO */
+  width:100%;
+  margin-bottom:30px;
+}
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 50px 20px;
-    }
+header h1{
+  margin:0;
+  font-size:64px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  background:linear-gradient(90deg,var(--red),var(--orange),var(--yellow));
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 16px 26px;
-      font-weight: bold;
-      background: linear-gradient(135deg, #ff0000, #ff6a00);
-      color: white;
-      text-decoration: none;
-      border-radius: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 0 20px rgba(255,60,0,0.4);
-    }
+/* ===== SECTIONS ===== */
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+}
 
-    .btn:hover {
-      transform: scale(1.05);
-    }
+.section-title{
+  text-align:center;
+  font-size:36px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:50px;
+}
 
-    .sauces {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
+/* ===== SAUCES ===== */
+.sauces{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:34px;
+}
 
-    .sauce {
-      background: linear-gradient(180deg, #140000, #080000);
-      border: 1px solid #300;
-      border-radius: 18px;
-      padding: 26px;
-      text-align: center;
-      box-shadow: inset 0 0 30px rgba(255,0,0,0.05);
-    }
+.sauce{
+  background:
+    linear-gradient(180deg,#160000,#070000);
+  border:1px solid #330000;
+  border-radius:20px;
+  padding:34px 26px;
+  text-align:center;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.7),
+    inset 0 0 40px rgba(255,0,0,0.06);
+}
 
-    .price {
-      font-size: 22px;
-      font-weight: bold;
-      color: #ff3c00;
-      margin: 10px 0;
-    }
+.sauce h3{
+  margin-top:0;
+  font-size:24px;
+  letter-spacing:2px;
+  color:var(--yellow);
+  text-transform:uppercase;
+}
 
-    .heat {
-      font-size: 22px;
-      letter-spacing: 3px;
-    }
+.sauce p{
+  color:#cccccc;
+  line-height:1.7;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #1a1a1a;
-      color: #777;
-      font-size: 14px;
-    }
-  </style>
+.price{
+  margin:18px 0;
+  font-size:24px;
+  font-weight:700;
+  color:var(--red);
+}
+
+.heat{
+  font-size:22px;
+  letter-spacing:5px;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+  display:block;
+  width:fit-content;
+  margin:50px auto 0;
+  padding:18px 34px;
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:white;
+  text-decoration:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--red),var(--orange));
+  box-shadow:0 0 30px rgba(255,60,0,0.6);
+}
+
+/* ===== ABOUT ===== */
+.about{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+  font-size:18px;
+  line-height:1.8;
+  color:#cfcfcf;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  border-top:1px solid #1a1a1a;
+  color:#777;
+  font-size:14px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <img src="logo.jpg" alt="Dirty Monkey Hotsauce Logo" style="max-width:200px; margin-bottom:20px;">
-
+  <img src="logo.jpg" alt="Dirty Monkey Hotsauce Logo">
   <h1>Dirty Monkey Hotsauce</h1>
-  <p>GET WILD • GET FIERY • GET DIRTY</p>
-
-  <a class="btn" href="https://wa.me/27763087143" target="_blank">Order on WhatsApp</a>
 </header>
 
 <section>
-  <h2>Our Sauces</h2>
+  <div class="section-title">Our Sauces</div>
 
   <div class="sauces">
     <div class="sauce">
       <h3>Green Rampage</h3>
-      <p>Fresh jalapeño flavour with a sharp, savage bite that builds steadily.</p>
+      <p>Fresh jalapeño flavour with a clean, savage burn.</p>
       <div class="price">R50 • 125ml</div>
       <div class="heat">🌶️🌶️</div>
     </div>
 
     <div class="sauce">
       <h3>Red Howler</h3>
-      <p>Bird’s Eye chilli chaos. Fast heat. Loud flavour. No mercy.</p>
+      <p>Bird’s Eye chillies delivering fast, violent heat.</p>
       <div class="price">R50 • 125ml</div>
       <div class="heat">🌶️🌶️🌶️🌶️</div>
     </div>
 
     <div class="sauce">
       <h3>Primal Inferno</h3>
-      <p>Ghost & Reaper chillies fused into one brutal, primal burn.</p>
+      <p>Ghost & Reaper chillies fused into pure brutality.</p>
       <div class="price">R50 • 125ml</div>
       <div class="heat">🌶️🌶️🌶️🌶️🌶️</div>
     </div>
   </div>
 
-  <p style="margin-top:30px; color:#999;">
-    <strong>Bulk orders:</strong> Prices to be discussed. Contact us directly via WhatsApp.
+  <p style="text-align:center;margin-top:40px;color:#aaa;">
+    <strong>Bulk orders:</strong> Prices to be discussed via WhatsApp
   </p>
+
+  <a class="btn" href="https://wa.me/27763087143" target="_blank">
+    Order on WhatsApp
+  </a>
 </section>
 
 <section>
-  <h2>About Dirty Monkey</h2>
-  <p>
-    Dirty Monkey Hotsauce was born from a love of chilli, fire, and flavour taken too far.
-    Every bottle is handcrafted in small batches with zero compromise.
-    This is sauce for people who don’t back down from heat.
-  </p>
+  <div class="section-title">About Dirty Monkey</div>
+  <div class="about">
+    Dirty Monkey Hotsauce is handcrafted in small batches for those who crave
+    real heat and savage flavour. No shortcuts. No weak sauce. Just fire.
+  </div>
 </section>
 
 <footer>
@@ -167,5 +206,3 @@
 
 </body>
 </html>
-
-
